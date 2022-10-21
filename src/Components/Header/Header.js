@@ -1,12 +1,15 @@
 import React from 'react'
+import EventSchedule from '../Pages/Home/Event-Schedule/EventSchedule'
+import Home from '../Pages/Home/Home'
 
 function Header() {
 
     const bg = {
-        background: `url(https://i.ibb.co/WBTY10Q/h.png) no-repeat center`,
+        background: `url(https://i.ibb.co/L1WdC0s/background.png) no-repeat`
     }
   return (
-    <div style={bg} className='!bg-cover'>
+   <div className="">
+        <div style={bg} className='!bg-cover'>
         <div className="py-[30px] mx-[15%] flex justify-between">
             <div className="logo">
                 <svg width="108" height="33" viewBox="0 0 108 33" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,12 +29,30 @@ function Header() {
             <div className="">
                 <button>
                     <svg width="22" height="14" viewBox="0 0 22 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1.55255 13H20.6578M1.55255 1H20.6578H1.55255ZM1.55255 7H20.6578H1.55255Z" stroke="#0A142F" stroke-width="1.875" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M1.55255 13H20.6578M1.55255 1H20.6578H1.55255ZM1.55255 7H20.6578H1.55255Z" stroke="#0A142F" strokeWidth="1.875" strokeLinecap="round" strokeLinejoin="round"/>
                     </svg>
                 </button>
             </div>
         </div>
-    </div>
+        <div className="relative">
+            <Home></Home>
+            <div className="rotate-90 absolute left-1/2 -translate-x-1/2 bottom-40">
+                <a href='#eventSchedule' className='flex gap-x-2 items-center'>
+                    <span>Scroll Down</span>
+                    <span className='rotate-[270deg]'>
+                        <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.0314936 0.938778L8.3137 15.284L16.5959 0.938778L15.5705 0.938777L8.3137 13.5079L1.05692 0.938777L0.0314936 0.938778Z" fill="#0A142F"/>
+                        <path d="M2.26385 0.938778L8.3137 11.4174L14.3636 0.938777L2.26385 0.938778Z" fill="#0A142F"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+        </div>
+        <section id='eventSchedule'>
+            <EventSchedule></EventSchedule>
+        </section>
+   </div>
   )
 }
 

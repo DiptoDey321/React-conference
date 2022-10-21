@@ -11,7 +11,8 @@ module.exports = {
         'dark-blue' : '#111D5E'
       },
       fontSize:{
-        headingOne : ['140px' , '170px']
+        headingOne : ['140px' , '170px'],
+        headingTwo : ['48px' , '58px']
       }
     },
   },
