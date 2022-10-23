@@ -5,28 +5,23 @@ import './../../../../App.css';
 const finalSpaceCharacters = [
   {
     id: 'gary',
-    name: 'Gary Goodspeed',
-    thumb: '/images/gary.png'
+    name: 'Organizer',
   },
   {
     id: 'cato',
-    name: 'Little Cato',
-    thumb: '/images/cato.png'
+    name: 'Speakers',
   },
   {
     id: 'kvn',
-    name: 'KVN',
-    thumb: '/images/kvn.png'
+    name: 'Location',
   },
   {
     id: 'mooncake',
-    name: 'Mooncake',
-    thumb: '/images/mooncake.png'
+    name: 'Schedule',
   },
   {
     id: 'quinn',
-    name: 'Quinn Ergon',
-    thumb: '/images/quinn.png'
+    name: 'Sponsors',
   }
 ]
 
@@ -46,7 +41,6 @@ function AppNew() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Final Space Characters</h1>
         <DragDropContext onDragEnd={handleOnDragEnd}>
           <Droppable droppableId="characters">
             {(provided) => (
@@ -55,11 +49,14 @@ function AppNew() {
                   return (
                     <Draggable key={id} draggableId={id} index={index}>
                       {(provided) => (
-                        <li ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+                        <li className='flex gap-x-3 items-center border border-[#d0d0d0] mb-[1em] rounded-lg px-[.8em] py-[.5em] hover:bg-primary' ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
                           <div className="characters-thumb">
-                            <img src={thumb} alt={`${name} Thumb`} />
+                            <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect width="50" height="50" rx="8" fill="#FFFCF6"/>
+                              <path d="M30.6 35L26.2 30.5556M17.4 15V35V15ZM17.4 15L21.8 19.4444L17.4 15ZM17.4 15L13 19.4444L17.4 15ZM30.6 35V15V35ZM30.6 35L35 30.5556L30.6 35Z" stroke="#FFC93E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
                           </div>
-                          <p>
+                          <p className='text-xl font-bold'>
                             { name }
                           </p>
                         </li>
@@ -73,9 +70,6 @@ function AppNew() {
           </Droppable>
         </DragDropContext>
       </header>
-      <p>
-        Images from <a href="https://final-space.fandom.com/wiki/Final_Space_Wiki">Final Space Wiki</a>
-      </p>
     </div>
   );
 }

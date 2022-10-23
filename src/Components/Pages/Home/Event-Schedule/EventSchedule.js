@@ -59,17 +59,17 @@ function EventSchedule() {
   return (
    
     <div className='pb-20'>
-        <div className="mt-[177px] mx-[15%] ">
-            <h3 className='text-headingTwo font-bold'>Event Schedule</h3>
-            <p className='text-xl font-normal text-[#0A142F]/80 mt-5 mb-[72px]'>Lorem uis diam turpis quam id fermentum.In quis diam turpis quam id fermentum.</p>
-            <div className="table w-full">
-            <table className="table-fixed w-full pb-20 ">
+        <div className="mt-[177px] mx-[8%] sm:mx-[15%] ">
+            <h3 className='text-headingTwo font-bold text-left'>Event Schedule</h3>
+            <p className='text-xl font-normal text-[#0A142F]/80 mt-5 mb-[72px] text-left'>Lorem uis diam turpis quam id fermentum.In quis diam turpis quam id fermentum.</p>
+            <div className="w-min-[1200px] overflow-x-auto sm:w-full ">
+            <table className="table-auto pb-20">
               <thead >
                 <tr>
-                <th className='border rounded-[10px]'></th>
+                <th className='border rounded-[10px] '></th>
                   {
                     days.map( day => 
-                    <th className='text-center py-[30px] text-xl font-bold border'>{day}</th> )
+                    <th className='text-center py-[30px] px-[40px] text-xl font-bold border '>{day}</th> )
                   }
                 </tr>
               </thead>
@@ -77,15 +77,15 @@ function EventSchedule() {
               
                   {
                     times.map(time =>   <tr className='border'> 
-                      <td className='h-[150px] text-xl font-bold m-3 text-center'> {time} </td>
+                      <td className='h-[150px] px-[30px] text-xl font-bold m-3 text-center'> {time} </td>
                       {
                           conferences.map(conference => {
 
                             if(time === conference.startTime){
-                              return <td className='text-center py-2 border'>
+                              return <td className='text-center py-2 border w-[180px]'>
                                 <p className='text-[#0A142F] font-bold text-base mb-4'>{conference.date} </p>
                                 <Link to='/conference'>
-                                  <div className="border mx-2 py-2 border-[#FCB12A] bg-[#FFFCF6] rounded-[8px]  cursor-pointer">
+                                  <div className="border mx-2 p-2 border-[#FCB12A] bg-[#FFFCF6] rounded-[8px] cursor-pointer ">
                                     <p className='text-[#725114] font-bold text-base'>{conference.title}</p>
                                     <p className='text-xs text-[#8B6F3B] mt-2'> {conference.startTime} - {conference.endTime}</p>
                                   </div>
@@ -93,7 +93,7 @@ function EventSchedule() {
                                 
                                 </td>
                             }else{
-                              return <td className='border'></td>
+                              return <td className='border !w-[150px]'></td>
                             }
                           })
                         }  

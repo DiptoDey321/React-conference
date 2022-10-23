@@ -8,9 +8,9 @@ function Home() {
   return (
     <div >
         <div className="ml-[10%] mr-[12%] pt-[80px] pb-[40px] relative">
-            <div className="flex items-end">
-                <div className="left-sec w-[63%]">
-                    <div className="font-bold   flex flex-col items-end">
+            <div className="flex flex-col sm:flex-row items-end">
+                <div className="left-sec w-full sm:w-[63%]">
+                    <div className="font-bold flex flex-col items-end">
                         <div className="flex items-start relative">
                             <div className="absolute -top-10 -left-14">
                                 <svg width="85" height="82" viewBox="0 0 85 82" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,14 +19,14 @@ function Home() {
                                 <path d="M40.4284 76.3598C31.2833 71.7456 21.3856 67.9994 11.2326 66.7087" stroke="#FFC93E" strokeWidth="2" strokeMiterlimit="1.5" strokeLinecap="round" strokelinejoinn="round"/>
                                 </svg>
                             </div>
-                            <h4 className='text-headingOne'>React <br /></h4>
+                            <h4 className='text-headingTwo sm:text-headingOne'>React <br /></h4>
                         </div>
-                        <h4 className='text-headingOne'>Conference</h4>
+                        <h4 className='text-headingTwo sm:text-headingOne'>Conference</h4>
                     </div>
                     <div className="flex items-start">
-                        <img className='w-full' src="https://i.ibb.co/4mxZh38/left-img.png" alt="" />
+                        <img className='w-full hidden sm:block' src="https://i.ibb.co/4mxZh38/left-img.png" alt="" />
                         <div className="">
-                            <p className='text-xl font-normal leading-[40px]'>Lorem uis diam turpis quam id fermentum.In quis diam turpis quam id fermentum..id fermentum.In quis diam turpis quam id fermentum.</p>
+                            <p className='text-base sm:text-xl font-normal leading-[40px] text-left mt-8 sm:mt-0'>Lorem uis diam turpis quam id fermentum.In quis diam turpis quam id fermentum..id fermentum.In quis diam turpis quam id fermentum.</p>
 
                             <button className='mt-6 w-[293px] h-[60px] bg-primary flex justify-center rounded-[30px]'>
                                 <span className='flex items-center gap-x-2'>
@@ -40,9 +40,14 @@ function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="right-sec w-[37%]">
-                    <img className='w-[627px]' src="https://i.ibb.co/tp6RnQ5/Hero-image.png" alt="" />
+                <div className="right-sec w-full sm:w-[37%] mt-8 sm:mt-0">
+                    <img className='sm:w-[627px] hidden sm:block' src="https://i.ibb.co/tp6RnQ5/Hero-image.png" alt="" />
+                    <img className='sm:w-[627px] block sm:hidden' src="https://i.ibb.co/y5wB11s/hero-m.png" alt="" />
                 </div>
+            </div>
+
+            <div className="sm:hidden">
+                <img className='w-[160px]' src="https://i.ibb.co/4mxZh38/left-img.png" alt="" />
             </div>
         </div>
     </div>
